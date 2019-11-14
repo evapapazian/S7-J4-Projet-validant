@@ -53,8 +53,11 @@ console.log(`${entrepreneurs[index].last} aurait ${2020 - entrepreneurs[index].y
 
 console.log("Trie les entrepreneurs par ordre alphabétique de nom de famille")
 
+function tri(a,b)
+{
+if (a.last < b.last) return -1; // si a<b il sera mis une position en dessous
+else if (a.last == b.last) return 0; // si a == b il sera laissé à la position
+else return 1; // si a>b il sera mis 1 position au dessus
+}  console.log(entrepreneurs.sort(tri))
 
-  entrepreneurs.sort()
-  console.log(entrepreneurs)
-
-
+// donc il prend la ligne 1 et la compare à la ligne 2, puis la 2 à la 3, et en fonction il monte la ligne ( return 1) si le nom est avant dans l'ordre alphabétique, autrement il reste à la même place (0) ou descend (-1)
